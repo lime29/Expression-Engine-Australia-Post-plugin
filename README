@@ -1,0 +1,81 @@
+A value must be provided for each data entity.  
+In some cases this may require dummy data to be sent.  (Eg a dummy parcel weight and dimensions when only a delivery time estimate is required).  
+-----------------------------------------------
+Variables
+-----------------------------------------------
+pickup_postcode	
+-----------------------------------------------
+Postcode of the pick-up address 
+Eg 5065. 	
+Typically defaulted to the postcode where goods are warehoused.	
+string: 4 chars
+
+destination_postcode	
+-----------------------------------------------
+Postcode of the delivery destination 
+Eg. 7015. 	
+Typically entered by the Merchant’s customer.
+A postcode is required for international destinations, but is not used in the calculation of the delivery charge.	
+string: 4 chars
+
+country	
+-----------------------------------------------
+Country of the delivery destination. 
+Designated by two character code. 
+Eg “AU” = Australia.	
+Typically the Consumer selects a country from a list of destinations and the web site automatically sends the matching code.  If Merchant only ships to destinations in Australia, typically web site is programmed to send code “AU” with every data set.	
+string: 2 chars 
+
+Refer “Country Codes” section in AusPostSuppliedIntegration.doc for a list of countries and their codes.
+
+service_type
+-----------------------------------------------
+The type of delivery service required.  	
+Typically entered by the Consumer from a selection list. Options are :
+DOMESTIC
+“Standard” = Regular Parcels
+“Express” = Express Parcels
+INTERNATIONAL
+“Air” = Air Mail
+ “Sea” = Sea Mail
+“ECI_D” = Express Courier International Document
+“ECI_M” = Express Courier International Merchandise
+“EPI” = Express Post International	
+
+DOMESTIC VALUES
+'STANDARD'
+'EXPRESS'
+INTERNATIONAL VALUES
+'AIR'
+'SEA'
+ ‘ECI_D’
+‘ECI_M’
+‘EPI’
+
+weight
+-----------------------------------------------
+Packed weight of each parcel in grams (g).	
+Typically sourced from the product and added automatically to calculate the total weight & dimensions.
+Allowance must be made for the weight & dimensions of packing material used in addition to that of the items being shipped.	
+
+Integer
+
+length	
+-----------------------------------------------
+Packed length of parcel in millimetres (mm).	
+integer
+
+width	
+-----------------------------------------------
+Packed width of parcel in millimetres (mm).	
+integer
+
+height
+-----------------------------------------------
+Packed height of parcel in millimetres (mm).
+integer
+
+quantity
+-----------------------------------------------
+Number of identical parcels for which the delivery charges are to be estimated.	Typically calculated by the Merchant’s web site.  Usually defaulted to 1 (single parcel).	
+integer
